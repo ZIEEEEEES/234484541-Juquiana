@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +25,7 @@
     <section id="home" class="hero">
         <div class="logo-container">
             <img src="logo.jpg" alt="logo" class="logo-pic">
-            <h1>Fayn Dinning Restawrant</h1>
+            <h1>Fayn Dining Restaurant</h1>
         </div>
         <div class="hero-content">
             <p>Your experience in a high-class restaurant is our priority.</p>
@@ -58,12 +57,27 @@
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" required></textarea>
-            <button class="cta-button">Send Message</button>
+            <button type="submit" class="cta-button">Send</button>
         </form>
     </section>
     <footer>
-        <p>&copy; 2025 Fayn Dinning Restawrant by TONI</p>
+        <p>&copy; 2023 Fayn Dining Restaurant. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                targetElement.scrollIntoView({
+                    behavior: 'smooth' // Add smooth scrolling
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

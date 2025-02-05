@@ -6,6 +6,9 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0; /* Sticks to the top */
+    z-index: 1000; /* Ensure it stays above other elements */
     background-color: #444;
     color: #fff;
     padding: 1em 0;
