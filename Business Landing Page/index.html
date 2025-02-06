@@ -18,10 +18,12 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <section id="home" class="hero">
         <div class="logo-container">
             <img src="logo.jpg" alt="logo" class="logo-pic">
@@ -32,11 +34,18 @@
             <button class="cta-button">Dine With Us Today</button>
         </div>
     </section>
+
     <section id="about" class="about-section">
         <h2>About Us</h2>
         <p>We started in 2025.</p>
         <p>We offer catering and fine dining.</p>
+        <div class="about-images">
+            <img src="about1.jpg" alt="Elegant dining area">
+            <img src="about2.webp" alt="Chef preparing a gourmet dish">
+            <img src="about3.jpg" alt="Beautifully plated meal">
+        </div>
     </section>
+
     <section id="services">
         <h2>Our Services</h2>
         <div class="service-grid">
@@ -48,8 +57,51 @@
                 <h3>Venue</h3>
                 <p>Located in a remote area surrounded by pine trees and mountains.</p>
             </div>
+            <div class="service-card">
+                <h3>Private Dining</h3>
+                <p>Enjoy exclusive dining experiences for special occasions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wine Tasting</h3>
+                <p>Savor a curated selection of the finest wines.</p>
+            </div>
+            <div class="service-card">
+                <h3>Chef’s Special Menu</h3>
+                <p>Seasonal dishes prepared by our top chefs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Live Music Nights</h3>
+                <p>Experience fine dining with soothing live performances.</p>
+            </div>
         </div>
     </section>
+
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="dish1.jpg" alt="Dish 1">
+                <h3>Grilled Salmon</h3>
+                <p>Freshly grilled salmon with a lemon butter sauce.</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish2.jpeg" alt="Dish 2">
+                <h3>Filet Mignon</h3>
+                <p>Juicy filet mignon served with mashed potatoes.</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish3.jpeg" alt="Dish 3">
+                <h3>Truffle Pasta</h3>
+                <p>Rich and creamy truffle-infused pasta.</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish4.jpg" alt="Dish 4">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Decadent chocolate cake with a molten center.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact-section">
         <h2>Get in Touch</h2>
         <p>Just write us a letter. Send it by an owl!</p>
@@ -60,6 +112,7 @@
             <button type="submit" class="cta-button">Send</button>
         </form>
     </section>
+
     <footer>
         <p>&copy; 2023 Fayn Dining Restaurant. All rights reserved.</p>
     </footer>
@@ -68,13 +121,9 @@
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
-                targetElement.scrollIntoView({
-                    behavior: 'smooth' // Add smooth scrolling
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
