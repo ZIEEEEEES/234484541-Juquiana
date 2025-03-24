@@ -20,7 +20,7 @@ Select * from students;
 select * from students where grade = "8"; 
 select * from students where first_name like "A%";
 
-Update students;
+Update students
 set grade = "9"
 where first_name = "Alice" and last_name = "Johnson";
 
