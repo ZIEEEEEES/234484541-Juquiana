@@ -1,67 +1,65 @@
-create database school_db;
-use school_db;
+CREATE DATABASE school_db;
+USE school_db;
 
-create table students (
-id INT AUTO_INCREMENT PRIMARY KEY,
-first_name VARCHAR(50),
-last_name VARCHAR(50),
-age INT,
-grade VARCHAR(5)
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    grade VARCHAR(5)
 );
 
-insert into students (first_name, last_name, age, grade)
-Values ("Adrianna", "Flores", 5, "1"),
+INSERT INTO students (first_name, last_name, age, grade)
+VALUES 
+("Adrianna", "Flores", 5, "1"),
 ("Samantha", "Juquiana", 12, "7"),
 ("Alice", "Johnson", 15, "8"),
 ("Gandara", "Aiko", 18, "12"),
 ("Bob", "Smith", 18, "12");
 
-Select * from students;
-select * from students where grade = "8"; 
-select * from students where first_name like "A%";
+SELECT * FROM students;
+SELECT * FROM students WHERE grade = "8"; 
+SELECT * FROM students WHERE first_name LIKE "A%";
 
-Update students
-set grade = "9"
-where first_name = "Alice" and last_name = "Johnson";
+UPDATE students
+SET grade = "9"
+WHERE first_name = "Alice" AND last_name = "Johnson";
 
-Update students 
-set age = age + 1;
+UPDATE students 
+SET age = age + 1;
 
-delete from students
-where first_name = "Bob" and last_name = "Smith";
+DELETE FROM students
+WHERE first_name = "Bob" AND last_name = "Smith";
 
-delete from students;
-where grade = "7";
+DELETE FROM students
+WHERE grade = "7";
 
-create table courses (
-course_id INT AUTO_INCREMENT PRIMARY KEY,
-course_name VARCHAR(50)
+CREATE TABLE courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(50)
 );
 
-create table enrollments (
-enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
-student_id INT,
-coure_id INT, 
-FOREIGN KEY (student_id) REFERENCES students(id),
-FOREIGN KEY (course_id) REFERENCES courses(course_id)
+CREATE TABLE enrollments (
+    enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    course_id INT, 
+    FOREIGN KEY (student_id) REFERENCES students(id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );
 
-insert into courses (course_name)
-values ("Mathematics"), ("Science"), ("English");
+INSERT INTO courses (course_name)
+VALUES ("Mathematics"), ("Science"), ("English");
 
-insert into enrollments (student_id, course_id)
-values (1, 1), (2, 2), (3, 3), (4, 4);
+INSERT INTO enrollments (student_id, course_id)
+VALUES (1, 1), (2, 2), (3, 3);
 
-select s.first_name, s.last_name, c.course_name
-from students.s 
-join enrollments e ON s.id = e.student_id
-join courses c ON e.course_id = c.course_id;
+SELECT s.first_name, s.last_name, c.course_name
+FROM students s 
+JOIN enrollments e ON s.id = e.student_id
+JOIN courses c ON e.course_id = c.course_id;
 
-select count(*) as total_students from students;
-select avg(age) as average_age from students;
-select * from students 
-order by age ASC
-limit 1; 
-
-
-
+SELECT COUNT(*) AS total_students FROM students;
+SELECT AVG(age) AS average_age FROM students;
+SELECT * FROM students 
+ORDER BY age ASC
+LIMIT 1;
