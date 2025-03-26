@@ -51,7 +51,11 @@ INSERT INTO courses (course_name)
 VALUES ("Mathematics"), ("Science"), ("English");
 
 INSERT INTO enrollments (student_id, course_id)
-VALUES (1, 1), (2, 2), (3, 3);
+VALUES 
+(1, 1), -- Adrianna in Mathematics
+(3, 3), -- Alice in English
+(4, 2); -- Gandara in Science
+
 
 SELECT s.first_name, s.last_name, c.course_name
 FROM students s 
